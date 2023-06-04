@@ -1,5 +1,6 @@
 ________________________________________________________
 			PANDAS:
+________________________________________________________
 
 Imports (typical setup):
 	- import numpy as np
@@ -64,7 +65,17 @@ Limiting Output:
 	tips.head(5) --> Get the first 5 rows
 	tips.tail(5) --> Get the last 5 rows
 
-_________________________________________________________
+Exporting Data: 
+	- You can export a dataframe to a particualr file type (i.e. excel, csv)
+
+Operations On Columns: 
+	- Just look up as needed, but all the same functionality as excel
+	- Pandas provides vectorized operations 
+________________________________________________________
+			Machine Learning Fundamentals:
+________________________________________________________
+
+
 
 Dataset = A dataset refers to a structured collection of data instances or samples that are used for training, testing, or evaluating a machine learning model
 
@@ -72,3 +83,86 @@ Data instance = An individual observation/example that comprises a dataset. For 
 
 Attribute/Feature/Variable = A measurable property or characteristic of an object that is used as input to a machine learning model
 
+
+Machine Learning Tasks = The specific types of problems/objectives that can be addressed using machine learning algorithms and techniques: 
+
+	--> Classification: Involves assigning data instances to predefined (discrete) classes or categories based on their features/attributes (example: spam detection, image classifcation, sentiment analysis, disease diagnosis) 
+		--> Binary Classification (2) = Positive/negative, Cat/dog, Spam/not spam
+		--> Multiclass Classification  (more than 2) = Cat/dog/lizard/dolphin, organge/apple/pear
+	--> Regression: Involves predicting a continous numeral value or a set of values. The goal is to build a model that can estimate or approximate the relationship between input features and the continous target variable. (example: predicting house prices, stock market prices)
+	--> Clustering: Clustering is an unsupervised learning task where the goal is to group similar data instances together based on their inherent similarities. The model identifies patterns or structures in the data without using predefined class labels. (example: customer sementation, document clustering, imaeg segmentation)
+	--> Anomoly Detection: Aims to identify rare or unusual data instances that deviate significantly from the expected patterns. The model learns the normal behavior from the majority of the data and flags instances that are considered abnormal or anomalous (example: fraud detection, network intrusion detection, equiment failure prediction)
+	--> Recommendation Systems: Predict and suggest it.ems or content that a user might be interested in based on their preferences and behavior
+	--> Natural Language Processing (NLP): NLP tasks involve processing and understanding human language. These tasks include text classification, sentiment analysis, named entity recognition, machine translation, text summarization, and question-answering systems.
+	--> Reinforcement Learning: Reinforcement learning involves training an agent to make sequential decisions in an environment to maximize rewards. The agent learns through trial and error and receives feedback from the environment. This task is often used in robotics, game playing, and autonomous systems.
+
+
+Types of Machine Learning: 
+	- Supervised Learning = Uses labeled inputs to train models and learn outputs (i.e. You give a program different photos of animals, with labels indicating the type of animal)
+	- Unsupervised Learning = Uses unlabeled data to learn about patterns in the data (i.e. You give a program different photos of animals, and it groups them together based on similarities - data is not labelled)
+	- Reinforcement Learning = Agent learning in interactive environment based on rewards and penalties (i.e. Like training a dog, give rewards when does something correct, otherwise penalize)
+
+
+
+Machine Learning: 
+______
+|     |		|------|
+|Input| ==>  	|Model | ==> Output (Prediction 
+|_____|		|______|
+
+All of the inputs are known as the feature vector.
+
+
+Types of features: (in machine learning, it is generally beneficial to represent all relevant data as numerical features BEFORE training a model)
+	- Qualitative: 
+		--> Represent characteristics or attributes that are non-numeric and typically fall into distinct categories or classes
+		--> Categorical/nominal data (finite number of categories or groups) => example is gender, nation.
+		--> Nominal data is a type of data that represents categories/labels without any inherent order or numerical value. Used alongside technique = One-hot encoding
+		--> Ordinal data is a type of data that can be ordered (example: ranking satisfaction levels from 1 to 5 or age groups from baby to senior)
+	- Quantitative: 
+		--> Represent numerical measurements or quantities that are associated with objects or observations
+		--> Can be further classified into continuous and discrete variables
+			--> Continuous : Can take on any values
+				- i.e. Height at any given time since height is something that can be any real number. Think : There is infinity values between 0 and 1. 
+			--> Discrete : Can only take specific values
+				- i.e. Number of easter eggs that you have collected 
+One-hot encoding = A technique used to represent categorical variables as binary vectors. It is a common preprocessing step in machine learning to convert categorical data into a numerical format that can be effectively be used by machine learning algorithms. Essentially, each category (i.e. canada, usa, china) becomes a feature (column) and a data instance will indicate with a 1/0 as to whether or not a instance fits into each category.
+
+Matrix: 
+	--> Features matrix (say, X)
+	--> Outcome vector (say, Y)
+
+How does it work?:
+	--> Each row (data instance) is passed into the model, and a prediction is made accordingly. Then, the resulting value is compared against the actual result. Adjusting the results and tweaking the model is what is called "training"
+
+
+The categories of datasets:
+
+--> Training Dataset:
+	- The training dataset is the portion of the data used to train the machine learning model.
+	- It contains a set of input data points (features) and their corresponding known output or target values (labels).
+	- The model is trained on this dataset by iteratively adjusting its parameters to minimize the loss function, which measures the discrepancy between the predicted outputs and the true labels.
+	- The training dataset is used to update the model's parameters, allowing it to learn patterns and relationships in the data.
+
+--> Validation Dataset:
+
+	- The validation dataset is a separate portion of the data that is not used during the training phase.
+	- After training the model on the training dataset, it is evaluated on the validation dataset.
+	- The validation dataset helps assess the model's generalization ability and its performance on unseen data.
+	- By evaluating the model on the validation dataset, you can fine-tune hyperparameters, choose between different models, or make decisions on the best-performing model.
+
+--> Testing Dataset:
+
+	- The testing dataset is another independent portion of the data that is not used during training or validation.
+	- Once the model is trained and fine-tuned using the training and validation datasets, it is evaluated on the testing dataset.
+	- The testing dataset provides an unbiased assessment of the model's performance and its ability to generalize to new, unseen data.
+	- This evaluation helps estimate the model's performance in real-world scenarios and provides insights into its effectiveness before deploying it in production.
+
+
+Feedback Loop in the Training Phase:
+	- During the training phase, the model is presented with the training dataset, and it makes predictions on the input data.
+	- The predicted outcomes are compared to the true labels or target values in the training dataset.
+	- The difference between the predicted values and the true values is quantified using a loss function.
+	- The loss function measures how well the model is performing on the training data and serves as a guide for updating the model's parameters.
+	- Through an optimization algorithm like gradient descent, the model iteratively adjusts its parameters to minimize the loss and improve its predictive performance.
+	- This feedback loop continues for multiple iterations or epochs, gradually improving the model's ability to make accurate predictions.
