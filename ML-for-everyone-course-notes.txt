@@ -1,4 +1,30 @@
 ________________________________________________________
+			Statistics Concepts:
+________________________________________________________
+
+Mean:
+	--> Represents the average value of a dataset.
+	--> Calculated by summing up all values and dividing by the total number of values.
+
+Harmonic Mean:
+	--> A type of average that is used when dealing with rates, ratios, or other quantities that have a multiplicative relationship
+	--> Calculated by taking the reciprocal of the arithmetic mean of the reciprocals of a set of values
+	--> Gives more weight to the smaller values in the dataset, making it useful in situations where there are extreme values or outliers that can significantly influence the average
+
+Median:
+	--> Represents the middle value in a dataset.
+	--> Less affected by outliers compared to the mean.
+
+Mode:
+	--> Represents the most frequent value(s) in a dataset.
+	--> Can be applied to both numerical and categorical data.
+
+Standard Deviation:
+	--> Measures the spread or variability of a dataset.
+	--> Indicates the average distance between data points and the mean.
+
+
+________________________________________________________
 			PANDAS:
 ________________________________________________________
 
@@ -166,3 +192,69 @@ Feedback Loop in the Training Phase:
 	- The loss function measures how well the model is performing on the training data and serves as a guide for updating the model's parameters.
 	- Through an optimization algorithm like gradient descent, the model iteratively adjusts its parameters to minimize the loss and improve its predictive performance.
 	- This feedback loop continues for multiple iterations or epochs, gradually improving the model's ability to make accurate predictions.
+
+
+Loss Functions: 
+	--> Different types of machine learning tasks and models require different loss functions
+	- L1 Loss (Mean Absolute Error):
+		--> Measures the average absolute difference between predicted values and true values.
+		--> Used in regression tasks to quantify the error between predictions and true values.
+		--> Less commonly used in binary classification tasks.
+		--> Minimizing L1 loss aims to make predictions as close as possible to the true values in an absolute sense.
+	- Understanding the graph:
+		--> The x axis represents the number of training iterations or epochs.
+		--> The y axis represents the value of the L1 Loss
+			--> Essentially, the graphs differ in the way that the loss (y axis values) are calculated
+	- L2 Loss (Mean Squared Difference): 
+		--> Calculates the average squared difference between predicted values and true values.
+		--> Widely used in regression tasks to measure the error between predictions and true values.
+		--> Can be adapted for binary classification, but other loss functions are typically preferred.
+		--> Penalizes outliers and large errors more than L1 loss due to the squaring operation.
+		--> Assumes a Gaussian distribution (bell curve) of errors, which may not be ideal for binary classification.
+	- Understanding the graph:
+		--> Similar to above
+	- Binory Cross Entropy Loss: loss = -[y * log(p) + (1 - y) * log(1 - p)]
+		--> You just need to know that loss decreases as the performance gets better
+
+The Actual Training: 
+In machine learning, a training epoch or iteration refers to a complete pass through the entire training dataset during the training process of a machine learning model.
+
+Here's how it works:
+
+	Training Dataset:
+		--> The training dataset consists of a collection of input data points and their corresponding target values. For example, in a supervised learning problem, the training dataset contains pairs of input features and their associated labels.
+
+	Batch Processing:
+		--> During training, the dataset is typically divided into smaller subsets called batches. Each batch contains a fixed number of data points. The model updates its parameters based on the loss calculated for the predictions made on the data points within the batch.
+
+	Iteration:
+		--> An iteration refers to the process of making predictions on one batch of data and updating the model's parameters based on the loss calculated for that batch. After processing a batch, the model adjusts its parameters using an optimization algorithm, such as gradient descent, to minimize the loss and improve its predictions.
+
+	Multiple Iterations per Epoch:
+		--> To complete an epoch, the model goes through multiple iterations, processing all the batches in the training dataset. The number of iterations per epoch depends on the batch size and the total number of data points in the training dataset. If the batch size is equal to the dataset size, then there will be one iteration per epoch.
+
+Essentially: 
+		--> The training dataset is divided into smaller subsets called batches.
+		--> Each batch is processed iteratively through the model.
+		--> For each batch, the model makes predictions, calculates the loss between the predictions and the actual values, and updates its parameters using an optimization algorithm.
+		--> This process of processing one batch and updating the model's parameters is referred to as an iteration.
+		--> Multiple iterations are performed until all batches in the training dataset have been processed.
+		--> When all batches have completed one iteration, an epoch is considered complete.
+		--> The process of going through all the batches and completing multiple iterations is repeated for a specified number of epochs.
+
+In summary, during an epoch, the training dataset is divided into batches, and the model iteratively processes each batch, calculates loss, and updates its parameters. This process is repeated for a specified number of epochs, allowing the model to gradually learn from the entire training dataset.
+
+
+Metrics of Performance: 
+		--> Accuracy (Overall correctness of the model's predictions - ratio of correct to total predictions)
+		--> Precision (Ability to correctly identify positive instances out of all the instances it predicted as psotiive - True Positives / (True Positives + False Positives))
+		--> Recall (Ability to identify positive instances out of all the positive instances - True Positives / (True Positives + False Negatives))
+		--> F1 Score (Combines precision and recall into a single metric, a balanced measure of a model's performance - calculated as the harmonic mean of precision and recall)
+			--> F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
+			--> F1 Score = 2 * (0.85 * 0.75) / (0.85 + 0.75) = 0.796
+
+
+
+
+
+
