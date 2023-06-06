@@ -298,3 +298,23 @@ ________________________________________________________
 Oversampling: A technique used to solve the class imbalance problem, where on class has significantly fewer instances than the other. New instances are synthetically generated for the minority class with the goal to create a balanced dataset with an equal number of instances for each class.
 
 Scaling: The process of transforming numerical features/variables to a specific range or distribution. It is an important preprocessing step that helps bring all features to a similar scale, ensuring that no single feature dominates the learning algorithm due to its larget magnitude.
+
+________________________________________________________
+			Models:
+________________________________________________________
+
+
+
+K-Nearest Neighbours: 
+	--> Training Phase: During the training phase of KNN, the algorithm memorizes the entire training dataset, including the feature values and corresponding class labels.
+
+	--> Prediction Phase: When making predictions for a new, unseen data point, KNN considers its K nearest neighbors in the training dataset based on a chosen distance metric (e.g., Euclidean distance).
+
+	--> Finding Neighbors: To find the K nearest neighbors, KNN measures the distance between the new data point and all other data points in the training dataset. It selects the K data points with the shortest distance to the new point.
+
+	--> Voting or Weighted Voting: Once the K nearest neighbors are identified, KNN performs a majority vote (for binary classification) or weighted vote (for multi-class classification) to determine the class label of the new data point. The class label with the highest count (or highest weighted sum) among the K neighbors is assigned as the predicted class.
+
+	--> Choosing K: The value of K in KNN is a hyperparameter that needs to be specified. It determines the number of neighbors considered for the classification. The choice of K can impact the model's performance and generalization ability, and it may need to be determined through experimentation or cross-validation.
+
+	--> Decision Boundary: KNN does not explicitly learn a decision boundary or model parameters. Instead, it relies on the local density of data points in the feature space. The decision boundary of KNN can be complex and nonlinear, depending on the distribution and structure of the data.
+
